@@ -1,0 +1,28 @@
+{
+    "org.apache.cordova.file": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.file"
+        }
+    },
+    "org.apache.cordova.media": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.media"
+        }
+    },
+    "com.radlib.cordova.rfidreader": {
+        "source": {
+            "type": "registry",
+            "id": "com.radlib.cordova.rfidreader"
+        }
+    },
+    "com.phonegap.plugins.barcodescanner": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/wildabeast/BarcodeScanner",
+            "subdir": ".",
+            "ref": "fb600c1710ff2f786a1c3a31cd135d69846817fe"
+        }
+    }
+}
