@@ -27,12 +27,12 @@ function play(file) {
 }
 
 function  fileDuration(file){
-    var src = 'stuff.mp3';
+    var src = '/android_asset/www/stuff.mp3';
     try {
             myMedia = new Media(src, null, null, null);
     }
     catch(err) {
-        alert("En fait c'est une grosse blague qui me fait perdre plein de temps...");
+        alert("An error has occurred "+ err);
     }
     alert(myMedia);
     alert(myMedia.duration);
@@ -80,7 +80,8 @@ function scanDevice(){
 
 //this function is call when the scan succeed
 function printScan(devices){
-    alert("Scan succeed carabosse");
+    alert("Scan succeed");
+    connect();
    for(var i = 0; i < devices.length; i++){
       alert("Name: " + devices[i].name + "\n" + 
             "Address: " + devices[i].address + "\n" +
@@ -90,6 +91,7 @@ function printScan(devices){
 }
 
 
+
 //this function is call when the scan fail
 function failureScan(failureMsg){
     alert("Can't scan :" + failureMsg);
@@ -97,19 +99,14 @@ function failureScan(failureMsg){
 
 //this function try to connect with the device found
 function connect(){
+    alert('this function probably need a parameter');
     radlib.connect(printConnect,failureConnect,readerObj);
 }
 
 
 //This function is call if the connection succeed
 function printConnect(obj){
-    alert('still succeed but nothing to connect :/')
-    alert("ID: " + obj.id + "<br>" +
-                                        "Reader: " + obj.reader + "<br>" +
-                                        "Time: " + obj.time + "<br>" +
-                                        "Date: " + obj.date + "<br>" +
-                                        "Frame: " + obj.frame + "<br>" +
-                                        "Friendly Name: " + obj.friendlyName + "<br>");
+    alert('still succeed but nothing to connect :/');
     /*document.getElementById("display").innerHTML = "ID: " + obj.id + "<br>" +
                                         "Reader: " + obj.reader + "<br>" +
                                         "Time: " + obj.time + "<br>" +
