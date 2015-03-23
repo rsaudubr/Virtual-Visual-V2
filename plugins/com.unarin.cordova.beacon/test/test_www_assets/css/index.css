@@ -41,68 +41,18 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
+    text-transform:uppercase;
     width:100%;
-    text-align:center;
-}
-
-
-.main{max-width:500px; margin:50px auto;}
-
-.main #logo{
-    margin-bottom:30px;
-    
-}
-
-.btn{
-    font-size:24px;
-    border:none;
-    background-color: #00AAD4;
-    border-radius: 0.35em;
-    box-shadow: none !important;
-    color: #fff!important;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 400;
-    height: calc(2.75em + 6px);
-    line-height: 2.75em;
-    padding: 0 1.5em;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
-    white-space: nowrap;
-    width:80%;
-    
-}
-
-#btnScan{
-    background-color: rgb(255, 94, 55);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-
-
-}
-
-.test {
-    color: #606060;
-    border-radius: 0.35em;
-    background-color: #fff;
-    padding: 0.5em 1.5em;
-    text-decoration:none;
-}
-
-
-.main .lead{
-    font-size:32px;
 }
 
 /* Portrait layout (default) */
 .app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:30%;
+    top:50%;
     height:50px;                   /* text area height */
-    width:330px;                   /* text area width */
+    width:225px;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
@@ -120,27 +70,12 @@ body {
 }
 
 h1 {
-    font-size:38px;
+    font-size:24px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
     padding:0px;
     text-align:center;
-    text-transform:uppercase;
-}
-
-h2 {
-    font-size:28px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-    text-transform:uppercase;
-}
-
-p{
-    font-size:18px;
 }
 
 .event {
@@ -149,7 +84,7 @@ p{
     color:#FFFFFF;
     font-size:12px;
     margin:0px 30px;
-    padding:4px 0px;
+    padding:2px 0px;
 }
 
 .event.listening {
@@ -162,17 +97,8 @@ p{
     display:none;
 }
 
-.event.tag {
-    background-color:#EC971F;
-    margin-bottom:10px;
-    -webkit-transition: opacity 1s ease-in;
-    -moz-transition: opacity 1s ease-in;
-    -o-transition: opacity 1s ease-in;
-    
-    font-size:24px;
-    height: calc(2.75em + 6px);
-    line-height: 2.75em;
-    padding: 0 1.5em;
+.event.testsFailed {
+    background-color:red;
 }
 
 @keyframes fade {
@@ -191,89 +117,3 @@ p{
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-
-/*
- * Modal
- */
-
-.modalDialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
-    opacity:0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-}
-.modalDialog:target {
-    opacity:1;
-    pointer-events: auto;
-}
-.modalDialog > div {
-    width: 400px;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    background: #fff;
-
-}
-
-.modalDialog h2 {
-    margin-top:20px;
-   }
-   
-   .modalDialog p{
-     font-size:20px;
-   }
-.close {
-    background: #FF5555;
-    color: #FFFFFF;
-    line-height: 25px;
-    position: absolute;
-    right: -12px;
-    text-align: center;
-    top: -10px;
-    width: 24px;
-    text-decoration: none;
-    font-weight: bold;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
-}
-.close:hover {
-    background: #00d9ff;
-}
-
-.btn.red{
-        background: #FF5555;
-    color: #FFFFFF;
-}
-
-#test .btn{
-    margin-bottom:15px;
-}
-
-#tagEvent {
-    -webkit-transition: opacity 1s ease-in;
-    -moz-transition: opacity 1s ease-in;
-    -o-transition: opacity 1s ease-in;
-    transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
-
-}
-
-
-#tagEvent.fade-out {
-    opacity: 0;
-}
-#tagEvent.fade-in {
-    opacity: 1;
-}
-

@@ -38,6 +38,86 @@ function  fileDuration(file){
     alert(myMedia.duration);
 }
 
+//This function enable or disable the bluetooth
+function setBluetooth(){
+    cordova.plugins.locationManager.isBluetoothEnabled()
+       .then(function(isEnabled){
+       console.log("isEnabled: " + isEnabled);
+       if (isEnabled) {
+           cordova.plugins.locationManager.disableBluetooth();
+       } else {
+           cordova.plugins.locationManager.enableBluetooth();        
+       }
+    })
+    .fail(console.error)
+    .done();
+}
+
+
+//Create a BeaconRegion data transfer object.
+function createBeacon() {
+
+    var uuid = 'DA5336AE-2042-453A-A57F-F80DD34DFCD9'; // mandatory
+    var identifier = 'beaconAtTheMacBooks'; // mandatory
+    var minor = 1000; // optional, defaults to wildcard if left empty
+    var major = 5; // optional, defaults to wildcard if left empty
+
+    // throws an error if the parameters are not valid
+    var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid, major, minor);
+
+    alert(beaconRegion);
+
+    return beaconRegion;   
+} 
+
+
+//this function scan for any revice.
+//return the name, the adress and the type (only bluetooth for the moment)
+function scanDevice(){
+    alert("play an audio file while searching device");
+    radlib.scan(printScan,failureScan, ["BLUETOOTH"]);
+}
+
+//this function is call when the scan succeed
+function printScan(devices){
+    alert("Scan succeed");
+   for(var i = 0; i < devices.length; i++){
+      alert("Name: " + devices[i].name + "\n" + 
+            "Address: " + devices[i].address + "\n" +
+            "ConnectionType: " + devices[i].connectionType);
+   }
+   alert("play an audio file maybe");
+}
+
+
+//this function is call when the scan fail
+function failureScan(failureMsg){
+    alert("Can't scan :" + failureMsg);
+}
+
+//this function try to connect with the device found
+function connect(){
+    radlib.connect(printConnect,failureConnect,readerObj);
+}
+
+
+//This function is call if the connection succeed
+function printConnect(obj){
+    alert('still succeed but nothing to connect :/')
+    alert("ID: " + obj.id + "<br>" +
+                                        "Reader: " + obj.reader + "<br>" +
+                                        "Time: " + obj.time + "<br>" +
+                                        "Date: " + obj.date + "<br>" +
+                                        "Frame: " + obj.frame + "<br>" +
+                                        "Friendly Name: " + obj.friendlyName + "<br>");
+    /*document.getElementById("display").innerHTML = "ID: " + obj.id + "<br>" +
+                                        "Reader: " + obj.reader + "<br>" +
+                                        "Time: " + obj.time + "<br>" +
+                                        "Date: " + obj.date + "<br>" +
+                                        "Frame: " + obj.frame + "<br>" +
+                                        "Friendly Name: " + obj.friendlyName + "<br>";*/
+}
+
 
 var app = {
     // Application Constructor

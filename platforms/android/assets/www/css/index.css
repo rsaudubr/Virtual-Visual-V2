@@ -74,6 +74,15 @@ body {
     
 }
 
+#btnScan{
+    background-color: rgb(255, 94, 55);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+
+}
+
 .test {
     color: #606060;
     border-radius: 0.35em;

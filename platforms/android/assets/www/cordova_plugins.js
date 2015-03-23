@@ -195,6 +195,48 @@ module.exports = [
         "id": "com.radlib.cordova.rfidreader.ReaderTSL_1128_UHF"
     },
     {
+        "file": "plugins/com.unarin.cordova.beacon/www/lib/underscore-min-1.6.js",
+        "id": "com.unarin.cordova.beacon.underscorejs",
+        "runs": true
+    },
+    {
+        "file": "plugins/com.unarin.cordova.beacon/www/lib/q.min.js",
+        "id": "com.unarin.cordova.beacon.Q",
+        "runs": true
+    },
+    {
+        "file": "plugins/com.unarin.cordova.beacon/www/LocationManager.js",
+        "id": "com.unarin.cordova.beacon.LocationManager",
+        "merges": [
+            "cordova.plugins"
+        ]
+    },
+    {
+        "file": "plugins/com.unarin.cordova.beacon/www/Delegate.js",
+        "id": "com.unarin.cordova.beacon.Delegate",
+        "runs": true
+    },
+    {
+        "file": "plugins/com.unarin.cordova.beacon/www/model/Region.js",
+        "id": "com.unarin.cordova.beacon.Region",
+        "runs": true
+    },
+    {
+        "file": "plugins/com.unarin.cordova.beacon/www/Regions.js",
+        "id": "com.unarin.cordova.beacon.Regions",
+        "runs": true
+    },
+    {
+        "file": "plugins/com.unarin.cordova.beacon/www/model/CircularRegion.js",
+        "id": "com.unarin.cordova.beacon.CircularRegion",
+        "runs": true
+    },
+    {
+        "file": "plugins/com.unarin.cordova.beacon/www/model/BeaconRegion.js",
+        "id": "com.unarin.cordova.beacon.BeaconRegion",
+        "runs": true
+    },
+    {
         "file": "plugins/com.phonegap.plugins.barcodescanner/www/barcodescanner.js",
         "id": "com.phonegap.plugins.barcodescanner.BarcodeScanner",
         "clobbers": [
@@ -208,6 +250,7 @@ module.exports.metadata =
     "org.apache.cordova.file": "1.3.3",
     "org.apache.cordova.media": "0.2.16",
     "com.radlib.cordova.rfidreader": "0.0.0",
+    "com.unarin.cordova.beacon": "3.3.0",
     "com.phonegap.plugins.barcodescanner": "2.0.1"
 }
 // BOTTOM OF METADATA

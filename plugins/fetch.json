@@ -24,5 +24,12 @@
             "subdir": ".",
             "ref": "fb600c1710ff2f786a1c3a31cd135d69846817fe"
         }
+    },
+    "com.unarin.cordova.beacon": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/petermetz/cordova-plugin-ibeacon.git",
+            "subdir": "."
+        }
     }
 }
